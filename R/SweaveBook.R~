@@ -1,0 +1,9 @@
+SweaveBook = function(idx = 0:6, path = ""){
+    for(i in idx){
+        path = paste(path,"Chapter",i,sep="")
+        setwd(path)
+        fname = paste("ch",i,".rnw", sep = "")
+        Sweave(fname)
+        setwd("..")
+    }
+}

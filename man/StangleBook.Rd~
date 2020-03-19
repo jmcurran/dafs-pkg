@@ -1,0 +1,66 @@
+\name{StangleBook}
+\alias{StangleBook}
+\title{
+Tangle all the code in a set of Sweave files
+}
+\description{
+
+}
+\usage{
+StangleBook(idx = 0:6, path = "")
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{idx}{
+%%     ~~Describe \code{idx} here~~
+}
+  \item{path}{
+%%     ~~Describe \code{path} here~~
+}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+%%  ~Describe the value returned
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
+%% ...
+}
+\references{
+%% ~put references to the literature/web site here ~
+}
+\author{
+%%  ~~who you are~~
+}
+\note{
+%%  ~~further notes~~
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\examples{
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (idx = 0:6, path = "") 
+{
+    for (i in idx) {
+        path = paste(path, "Chapter", i, sep = "")
+        setwd(path)
+        fname = paste("ch", i, ".rnw", sep = "")
+        Stangle(fname)
+        setwd("..")
+    }
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
